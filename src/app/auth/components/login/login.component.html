@@ -1,0 +1,40 @@
+  <div class="o-container o-container--xsmall u-letter-box--super">
+    <h1 class="c-heading u-xlarge">Login</h1>
+
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit(loginForm)">
+      <div class="c-input-group c-input-group--stacked">
+        <div class="o-field">
+          <input
+            class="c-field"
+            type="text"
+            placeholder="Email"
+            formControlName="email"
+            email>
+        </div>
+
+        <div class="o-field">
+          <input
+            class="c-field"
+            type="password"
+            placeholder="Password"
+            formControlName="password">
+        </div>
+
+        <input
+          class="c-button"
+          type="submit"
+          value="Login"
+          [disabled]="loginForm.invalid">
+      </div>
+
+      <p class="c-text--help c-text--quiet">Expect A call from us in few days after signup</p>
+      Or
+      <button
+        class="c-button"
+        routerLink="/signup">
+        Signup
+      </button>
+    </form>
+  </div>
