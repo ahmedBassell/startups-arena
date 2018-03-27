@@ -14,12 +14,14 @@ import { UserService } from './services/user/user.service';
 import { CoreComponent } from './components/core/core.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     CoreComponent,
     NotFoundComponent,
-    DashboardComponent
+    DashboardComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,

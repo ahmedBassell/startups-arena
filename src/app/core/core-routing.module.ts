@@ -7,17 +7,13 @@ import { CoreComponent } from './components/core/core.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
+import { HomeComponent } from './home/home.component';
 
 const coreRoutes: Routes = [
-  // {
-    // path: '',
-    // redirectTo: 'login'
-    // component: HomeComponent
-  // },
   {
     path: '',
     component: CoreComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -25,8 +21,8 @@ const coreRoutes: Routes = [
         pathMatch: 'full',
       },
       {
-        path: 'dashboard',
-        component: DashboardComponent,
+        path: 'home',
+        component: HomeComponent,
       }
     ]
   },
