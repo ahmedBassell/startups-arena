@@ -1,48 +1,57 @@
-  <div class="o-container o-container--xsmall u-letter-box--super">
-    <h1 class="c-heading u-xlarge">Signup</h1>
+<div class="signup-container">
+  <div class="col-md-4 col-md-offset-1">
+    <div class="login-container__content">
+      <img src="assets/images/Logo.png" alt="">
+      <h1>Create account</h1>
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmit(loginForm)">
+        <div class="c-input-group c-input-group--stacked">
+          <div class="form-group">
+            <label for="">Email</label>
+            <input
+              class="c-field form-control"
+              type="text">
+          </div>
 
-    <form
-      [formGroup]="signupForm"
-      (ngSubmit)="onSubmit(signupForm)">
-      <div class="c-input-group c-input-group--stacked">
-        <div class="o-field">
+          <div class="form-group">
+            <label for="">Name</label>
+            <input
+              class="c-field form-control"
+              type="text">
+          </div>
+
+          <div class="form-group">
+            <label for="">Phone Number</label>
+            <input
+              class="c-field form-control"
+              type="text">
+          </div>
+
+          <div class="form-group">
+            <label for="">Password</label>
+            <input
+              class="c-field form-control"
+              type="text"
+              formControlName="password">
+          </div>
+
           <input
-            class="c-field"
-            type="text"
-            placeholder="Email"
-            formControlName="email"
-            email>
+            class="c-button btn-primary btn-lg btn-block"
+            type="submit"
+            value="Login">
         </div>
 
-        <div class="o-field">
-          <input
-            class="c-field"
-            type="text"
-            placeholder="Phone"
-            formControlName="phone">
-        </div>
+        <p class="text-center">Already have an account?
+          <a
+            routerLink="/signup">
+             Sign in.
+          </a>
+        </p>
 
-        <div class="o-field">
-          <input
-            class="c-field"
-            type="password"
-            placeholder="Password"
-            formControlName="password">
-        </div>
-
-        <input
-          class="c-button"
-          type="submit"
-          value="Signup"
-          [disabled]="signupForm.invalid">
-      </div>
-
-      <p class="c-text--help c-text--quiet">Expect A call from us in few days after signup</p>
-      Or
-      <button
-        class="c-button"
-        routerLink="/login">
-        Login
-      </button>
-    </form>
+      </form>
+    </div>
   </div>
+  <div class="col-md-6">
+  </div>
+</div>

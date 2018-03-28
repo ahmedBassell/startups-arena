@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="24px" viewBox="0 0 21 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>Components / Logo / Dark Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M13.2400891,5.64454343 C12.908686,5.74610245 12.4222717,5.83162584 11.7487751,5.89042316 C11.8075724,2.8596882 13.3469933,0.726948775 16.4525612,0.00534521158 C16.9496659,2.22895323 15.057461,5.03518931 13.2400891,5.64454343 Z M19.7238307,9.53051225 C20.0659243,9.02806236 20.6111359,8.46681514 21.3594655,7.83608018 C20.1674833,6.36080178 18.7884187,5.46815145 16.8106904,5.46815145 C14.9184855,5.46815145 13.3256125,6.44097996 12.1603563,6.44097996 C11.1714922,6.44097996 9.38619154,5.58040089 7.64365256,5.58040089 C3.9233853,5.58040089 1.95100223,9.22048998 1.95100223,13.010245 C1.95100223,17.2222717 5.14209354,23.9465479 8.37594655,23.9465479 C9.6481069,23.9465479 10.7919822,22.9844098 12.3046771,22.9844098 C13.8708241,22.9844098 15.1269488,23.9037862 16.596882,23.9037862 C19.0556793,23.9037862 21.3327394,19.7612472 22.0489978,17.5055679 C19.5474388,16.7412027 17.5376392,12.6841871 19.7238307,9.53051225 Z" id="path-1"></path>
+    </defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="home" transform="translate(-304.000000, -2409.000000)">
+            <g id="Group-8" transform="translate(0.000000, 2385.000000)">
+                <g id="Stacked-Group-3" transform="translate(170.000000, 24.000000)">
+                    <g id="Brands/apple" transform="translate(133.000000, 0.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Mask"></g>
+                        <g id="Color/Black-Copy" mask="url(#mask-2)" fill="#FFFFFF" fill-rule="evenodd">
+                            <rect id="Black" x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
