@@ -15,6 +15,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
     this.signupForm = new FormGroup({
+      name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
       phone: new FormControl(''),
       password: new FormControl('')
@@ -23,10 +24,11 @@ export class SignupComponent implements OnInit {
 
   // we should use user interface as value type
   onSubmit(form: FormGroup) {
+    console.log(form.value);
+    const name = form.value.name;
     const email = form.value.email;
     const password = form.value.password;
     const phone = form.value.phone;
-    const name = form.value.phone;
 
     this.authService.signup(name, email, phone, password)
       .subscribe(data => {

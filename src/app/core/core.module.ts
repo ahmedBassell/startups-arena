@@ -9,6 +9,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 
 import { LookupsService } from './services/lookups/lookups.service';
 import { UserService } from './services/user/user.service';
+import { GameService } from './services/games/game.service';
 
 
 import { CoreComponent } from './components/core/core.component';
@@ -37,7 +38,8 @@ import { CreatMatchComponent } from './creat-match/creat-match.component';
       multi: true
     },
     LookupsService,
-    UserService
+    UserService,
+    GameService
   ]
 })
 export class CoreModule { }

@@ -26,14 +26,19 @@ export class LoginComponent implements OnInit {
 
   // we should use user interface as value type
   onSubmit(form: FormGroup) {
+    console.log(form.value);
     const email = form.value.email;
     const password = form.value.password;
     this.authService.login(email, password)
-      .subscribe((userData: {id: string, ttl: number, userId: number}) => {
+      .subscribe((userData: any) => {
+        console.log(userData.headers);
+        console.log(userData.headers.keys());
+        console.log(userData.body);
+        console.log(userData.headers.get('Authorization'));
         this.authService.setToken(userData.id);
         this.lookupsService.setAuth(userData);
         this.lookupsService.saveAuth(userData);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/home']);
       });
   }
 }

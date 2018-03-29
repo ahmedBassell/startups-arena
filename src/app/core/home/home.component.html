@@ -14,36 +14,51 @@
     </div>
   </div>
 
-  <div class="nav-links">
-    <a href="#" class="btn btn-default btn-lg">
+  <div
+    class="nav-links"
+    *ngIf="isAuthenticated">
+    <a routerLink="/create-match" class="btn btn-default btn-lg">
+      Create match
+    </a>
+    <a routerLink="/logout" class="btn btn-default  btn-lg">
+      Logout
+    </a>
+  </div>
+
+  <div
+    class="nav-links"
+    *ngIf="!isAuthenticated">
+    <a routerLink="/login" class="btn btn-default btn-lg">
       login
     </a>
-    <a href="#" class="btn btn-default  btn-lg">
+    <a routerLink="signup" class="btn btn-default  btn-lg">
       signup
     </a>
   </div>
 </section>
 
 <section class="container upcomming">
-  <h3 class="pull-left">UpComing games</h3>
+  <h3 class="pull-left">UpComing Games</h3>
   <div class="btn-group pull-right">
     <button type="button" class="btn btn-default">Today</button>
     <button type="button" class="btn btn-default">Tomorrow</button>
-    <button type="button" class="btn btn-default">Custom</button>
+    <!-- <button type="button" class="btn btn-default">Custom</button> -->
   </div>
 
   <div class="clearfix"></div>
 
   <div class="row">
-    <div class="col-md-4">
+    <div
+      class="col-md-4"
+      *ngFor="let game of games">
       <div class="match-card">
         <div class="header-wrapper">
-          <h3>15 / 20</h3>
+          <h3>{{game.players_joined}} / {{game.capacity}}</h3>
           <img src="/assets/images/bg.png" alt="">
           <div class="progress">
             <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="70"
-            aria-valuemin="0" aria-valuemax="100" style="width:70%">
-              <span class="sr-only">70% Complete</span>
+            aria-valuemin="0" aria-valuemax="100" [style.width.%]="(100*(game.players_joined/game.capacity))">
+              <span class="sr-only">{{(100*(game.players_joined/game.capacity))}}% Complete</span>
             </div>
           </div>
         </div>
@@ -51,8 +66,8 @@
         <div class="match-details">
           <div class="row">
             <div class="col-md-12">
-              <h5 class="pull-left">Time</h5> 
-              <h5 class="pull-right">08:00 PM - 10:00 PM</h5>
+              <h5 class="pull-left">Time</h5>
+              <h5 class="pull-right">{{game.time_from}} - {{game.time_to}}</h5>
             </div>
           </div>
 
@@ -60,7 +75,7 @@
             <div class="col-md-8">
               <label for="">Place</label>
               <p>
-                104 Gamaet El Dewal El Arabeya St., MOHANDESEEN, Giza Governorate
+                {{game.place}}
               </p>
             </div>
             <div class="col-md-4">
@@ -69,102 +84,16 @@
           </div>
 
           <div class="text-center">
-            <h4>5 Players needed</h4>
+            <h4>{{game.capacity - game.players_joined}} Players needed</h4>
           </div>
         </div>
 
-          <button class="btn btn-primary btn-block btn-lg">
+          <button
+            class="btn btn-primary btn-block btn-lg"
+            (click)="joinGame(game)"
+            [disabled]="game.is_disabled">
             JOIN
           </button>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="match-card">
-        <div class="header-wrapper">
-          <h3>15 / 20</h3>
-          <img src="/assets/images/bg.png" alt="">
-          <div class="progress">
-            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="70"
-            aria-valuemin="0" aria-valuemax="100" style="width:70%">
-              <span class="sr-only">70% Complete</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="match-details">
-          <div class="row">
-            <div class="col-md-12">
-              <h5 class="pull-left">Time</h5> 
-              <h5 class="pull-right">08:00 PM - 10:00 PM</h5>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-8">
-              <label for="">Place</label>
-              <p>
-                104 Gamaet El Dewal El Arabeya St., MOHANDESEEN, Giza Governorate
-              </p>
-            </div>
-            <div class="col-md-4">
-              <img src="/assets/images/marker.png" alt="" class="match-details__marker">
-            </div>
-          </div>
-
-          <div class="text-center">
-            <h4>5 Players needed</h4>
-          </div>
-        </div>
-
-          <button class="btn btn-primary btn-block btn-lg">
-            JOIN
-          </button>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="match-card">
-        <div class="header-wrapper">
-          <h3>15 / 20</h3>
-          <img src="/assets/images/bg.png" alt="">
-          <div class="progress">
-            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="70"
-            aria-valuemin="0" aria-valuemax="100" style="width:70%">
-              <span class="sr-only">70% Complete</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="match-details">
-          <div class="row">
-            <div class="col-md-12">
-              <h5 class="pull-left">Time</h5> 
-              <h5 class="pull-right">08:00 PM - 10:00 PM</h5>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-8">
-              <label for="">Place</label>
-              <p>
-                104 Gamaet El Dewal El Arabeya St., MOHANDESEEN, Giza Governorate
-              </p>
-            </div>
-            <div class="col-md-4">
-              <img src="/assets/images/marker.png" alt="" class="match-details__marker">
-            </div>
-          </div>
-
-          <div class="text-center">
-            <h4>5 Players needed</h4>
-          </div>
-        </div>
-        
-          <button class="btn btn-primary btn-block btn-lg">
-            JOIN
-          </button>
-
       </div>
     </div>
   </div>

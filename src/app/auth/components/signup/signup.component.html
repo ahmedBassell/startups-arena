@@ -4,28 +4,31 @@
       <img src="assets/images/Logo.png" alt="">
       <h1>Create account</h1>
       <form
-        [formGroup]="loginForm"
-        (ngSubmit)="onSubmit(loginForm)">
+        [formGroup]="signupForm"
+        (ngSubmit)="onSubmit(signupForm)">
         <div class="c-input-group c-input-group--stacked">
           <div class="form-group">
             <label for="">Email</label>
             <input
               class="c-field form-control"
-              type="text">
+              type="text"
+              formControlName="email">
           </div>
 
           <div class="form-group">
             <label for="">Name</label>
             <input
               class="c-field form-control"
-              type="text">
+              type="text"
+              formControlName="name">
           </div>
 
           <div class="form-group">
             <label for="">Phone Number</label>
             <input
               class="c-field form-control"
-              type="text">
+              type="text"
+              formControlName="phone">
           </div>
 
           <div class="form-group">
@@ -39,17 +42,17 @@
           <input
             class="c-button btn-primary btn-lg btn-block"
             type="submit"
-            value="Login">
+            value="Sign up">
         </div>
 
-        <p class="text-center">Already have an account?
-          <a
-            routerLink="/signup">
-             Sign in.
-          </a>
-        </p>
 
       </form>
+      <p class="text-center">Already have an account?
+        <a
+          routerLink="/login">
+          Login.
+        </a>
+      </p>
     </div>
   </div>
   <div class="col-md-6">
