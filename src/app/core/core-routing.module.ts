@@ -8,6 +8,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { HomeComponent } from './home/home.component';
+import { CreatMatchComponent } from './creat-match/creat-match.component';
 
 const coreRoutes: Routes = [
   {
@@ -23,6 +24,10 @@ const coreRoutes: Routes = [
       {
         path: 'home',
         component: HomeComponent,
+      },
+      {
+        path: 'create',
+        component: CreatMatchComponent,
       }
     ]
   },
