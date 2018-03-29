@@ -15,13 +15,15 @@ import { CoreComponent } from './components/core/core.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
+import { CreatMatchComponent } from './creat-match/creat-match.component';
 
 @NgModule({
   declarations: [
     CoreComponent,
     NotFoundComponent,
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    CreatMatchComponent
   ],
   imports: [
     CommonModule,
