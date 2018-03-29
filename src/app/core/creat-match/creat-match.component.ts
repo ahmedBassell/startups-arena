@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { GameService } from '../services/games/game.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-creat-match',
@@ -9,7 +10,8 @@ import { GameService } from '../services/games/game.service';
 })
 export class CreatMatchComponent implements OnInit {
   gameForm;
-  constructor(private gameService: GameService) { }
+  constructor(private gameService: GameService,
+    private router: Router) { }
 
   ngOnInit() {
     this.gameForm = new FormGroup({
@@ -26,6 +28,7 @@ export class CreatMatchComponent implements OnInit {
     this.gameService.createGame(form.value)
       .subscribe(data => {
         console.log(data);
+        this.router.navigate(['/home']);
       });
   }
 
