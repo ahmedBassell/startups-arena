@@ -1,5 +1,5 @@
 .intro{
-  background: url('/assets/images/bg.png') no-repeat center center fixed; 
+  background: url('/assets/images/bg.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -37,10 +37,11 @@
   background: #FFFFFF;
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.05);
   border-radius: 5px;
-  height: 430px;
+  // height: 430px;
   width: 320px;
   margin:auto;
   margin-top:10%;
+  padding: 16px 0;
 
   img{
     width:100%;

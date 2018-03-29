@@ -6,8 +6,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bassell <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Matches</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a routerLink="/home">Matches</a></li>
+            <li><a routerLink="/login">Logout</a></li>
           </ul>
         </li>
       </ul>
@@ -18,21 +18,25 @@
     <div class="login-container__content">
       <h1>Create match</h1>
       <form
-        [formGroup]="loginForm"
-        (ngSubmit)="onSubmit(loginForm)">
+        [formGroup]="gameForm"
+        (ngSubmit)="onSubmit(gameForm)">
         <div class="c-input-group c-input-group--stacked">
           <div class="form-group">
             <label for="">Date of Match</label>
             <input
               class="c-field form-control"
-              type="date">
+              type="date"
+              formControlName="date">
           </div>
 
           <div class="form-group">
             <label for="">Time from .. to</label>
             <div class="row">
               <div class="col-md-6">
-                <select name="open_hour" class="form-control">
+                <select
+                  name="open_hour"
+                  class="form-control"
+                  formControlName="time_from">
                   <option value="0:00">12:00 am</option>
                   <option value="1:00">1:00 am</option>
                   <option value="2:00">2:00 am</option>
@@ -60,7 +64,10 @@
                 </select>
               </div>
               <div class="col-md-6">
-                <select name="open_hour" class="form-control">
+                <select
+                  name="open_hour"
+                  class="form-control"
+                  formControlName="time_to">
                   <option value="0:00">12:00 am</option>
                   <option value="1:00">1:00 am</option>
                   <option value="2:00">2:00 am</option>
@@ -94,7 +101,8 @@
             <label for="">where?</label>
             <input
               class="c-field form-control"
-              type="text">
+              type="text"
+              formControlName="address">
           </div>
 
           <div class="form-group">
@@ -102,9 +110,10 @@
             <input
               class="c-field form-control"
               type="text"
-              formControlName="number">
+              formControlName="number"
+              formControlName="capacity">
           </div>
-          
+
           <div class="col-md-4 col-md-offset-4">
             <input
               class="c-button btn-primary btn-lg btn-block"

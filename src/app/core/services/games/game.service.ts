@@ -10,4 +10,8 @@ export class GameService {
   getGames() {
     return this.http.get(`${this.apiUrl}/games`);
   }
+
+  createGame(data) {
+    return this.http.post(`${this.apiUrl}/games`, data);
+  }
 }
